@@ -13,10 +13,6 @@
 
 > Flybondi coding challenge
 
-### 🏠 [Homepage]()
-
-### ✨ [Demo]()
-
 ## Prerequisites
 
 - node 14.17.1
@@ -41,18 +37,11 @@ cd client
 npm start
 ```
 
-## Run tests
-
-```sh
-
-```
-
 ## Author
 
 👤 **Joaquín Villaneuva**
 
 - Website: j-villanueva.web.app
-- Github: [@ ](https://github.com/)
 
 ## Show your support
 
