@@ -1,0 +1,79 @@
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2f3143;
+    animation: appear 1s ease;
+  }
+  
+  .selected_card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .title {
+    background-color: #2f3143;
+    color: #fff;
+    border-bottom: 2px solid #fdbe15;
+    padding: 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  
+  .locations {
+    display: flex;
+    background-color: #eee;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .departure,
+  .total {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .passengers {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eee;
+    border-bottom: 2px solid #fdbe15;
+    padding: 1rem;
+  }
+  
+  /* .btn_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  } */
+  
+  .card_container button {
+    border: none;
+    border-radius: 1rem;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    width: 141.35px;
+    cursor: pointer;
+    outline: none;
+    background: #fdbe15;
+    color: #2f3143;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+  }
+  
+  .card_container button:hover {
+    background-color: #ffe8a9;
+  }

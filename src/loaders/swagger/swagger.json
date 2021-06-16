@@ -1,0 +1,216 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Flybondi Coding Challenge",
+      "description": "API of the interview coding challenge to apply for Flybondi.",
+      "version": "0.1.0",
+      "contact": {
+        "email": "villanuevajoaquin94@gmail.com"
+      }
+    },
+  
+    "servers": [
+      {
+        "url": "http://localhost:5000/api/v1",
+        "description": "Development"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Flights",
+        "description": "CRUD operations of the flights"
+      }
+    ],
+    "paths": {
+      "/flights/": {
+        "get": {
+          "tags": ["flights"],
+          "summary": "Get a list of all existing flights.",
+          "description": "",
+          "responses": {
+            "200": {
+              "description": "The array of flights in JSON format.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Flight"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": ["flights"],
+          "summary": "Create a new flight.",
+          "description": "",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Flight"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Flight created."
+            }
+          }
+        }
+      },
+      "/flights/{id}": {
+        "get": {
+          "tags": ["flights"],
+          "summary": "Get an existing flight by its ID.",
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The ID of a flight that wants to be fetched.",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Flight"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Flight fetched",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Flight"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": ["flights"],
+          "summary": "Update an existing flight by its ID.",
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The ID of the flight that wants to be updated.",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Flight"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Flight updated",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Flight"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": ["flights"],
+          "summary": "Delete an existing flight by its ID.",
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The ID of the flight that wants to be deleted.",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Flight deleted"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Flight": {
+          "required": [
+            "id",
+            "origin",
+            "destination",
+            "price",
+            "availability",
+            "date"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "The ID of the flight. It is automatically generated by Mongo.",
+              "type": "integer",
+              "example": "ase123loj3kl6"
+            },
+            "origin": {
+              "description": "The location the flight is departing from.",
+              "type": "string",
+              "example": "AEP"
+            },
+            "destination": {
+              "description": "The location the flight is arriving in.",
+              "type": "string",
+              "example": "BRC"
+            },
+            "price": {
+              "description": "The price of the ticket.",
+              "type": "number",
+              "example": 1000
+            },
+            "availability": {
+              "description": "How many seats are available in the plane departing from a certain location and arriving in another location.",
+              "type": "string",
+              "example": "123456"
+            },
+            "date": {
+              "description": "The date of departure of the flight.",
+              "type": "string",
+              "example": "09-12-2018"
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,92 @@
+.table_container {
+    padding: 2rem;
+  }
+  
+  table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.2);
+    color: #2f3143;
+  }
+  
+  table caption {
+    font-size: 1.75rem;
+    margin: 0.5rem 0 0.75rem;
+  }
+  
+  thead tr {
+    background-color: #fdbe15;
+  }
+  
+  .data td {
+    border: 1px solid #ddd;
+    padding: 0.35rem;
+  }
+  
+  table th,
+  table td {
+    padding: 0.625rem;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+  
+  .check {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .check:hover {
+    color: #fdbe15;
+  }
+  
+  @media screen and (max-width: 500px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3rem;
+    }
+  
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625rem;
+    }
+  
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.8rem;
+      text-align: right;
+    }
+  
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
